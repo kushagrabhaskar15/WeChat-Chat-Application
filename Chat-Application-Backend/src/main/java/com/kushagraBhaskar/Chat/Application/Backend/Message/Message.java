@@ -1,5 +1,6 @@
 package com.kushagraBhaskar.Chat.Application.Backend.Message;
 
+import com.kushagraBhaskar.Chat.Application.Backend.Conversation.Conversation;
 import com.kushagraBhaskar.Chat.Application.Backend.Enums.MessageType;
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -22,4 +23,7 @@ public class Message {
     @EnumeratedValue
     private MessageType type;
     private String sender;
+
+    @ManyToOne
+    private Conversation conversation;
 }
