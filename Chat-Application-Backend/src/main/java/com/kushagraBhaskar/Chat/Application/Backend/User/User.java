@@ -3,13 +3,16 @@ package com.kushagraBhaskar.Chat.Application.Backend.User;
 import com.kushagraBhaskar.Chat.Application.Backend.Conversation.Conversation;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -27,5 +30,5 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "conversation_id")
     )
-    private List<Conversation> conversations;
+    private List<Conversation> conversations = new ArrayList<>();
 }
